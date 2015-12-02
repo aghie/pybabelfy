@@ -17,6 +17,8 @@ sudo python setup.py install
 To use pybabelfy you must register at http://babelfy.org/ and obtain your RESTful key
 
 ```
+from pybabelfy.babelfy import *
+
 text= "BabelNet is both a multilingual encyclopedic dictionary and a semantic network"
 lang = "EN"
 key = "KEY" #This only works for the demo example. Change it for your RESTful key (you must register at babelfy.org for it)
