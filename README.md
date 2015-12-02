@@ -9,7 +9,7 @@ You can install pybabelfy from Pypi.
 ```
 sudo pip install pybabelfy
 ```
-or download the project, use ```cd``` to move to pybabelfy folder and run:
+or download the project, use ```cd``` to move to the pybabelfy folder and run:
 ```
 sudo python setup.py install
 ```
