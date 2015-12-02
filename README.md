@@ -19,7 +19,7 @@ To use pybabelfy you must register at http://babelfy.org/ and obtain your RESTfu
 ```
 text= "BabelNet is both a multilingual encyclopedic dictionary and a semantic network"
 lang = "EN"
-key = "KEY" #This only works for the demo example. Change for the key you get once registered
+key = "KEY" #This only works for the demo example. Change it by your RESTful key (you must register at babelfy.org for it)
 
 babelapi = Babelfy()
 
