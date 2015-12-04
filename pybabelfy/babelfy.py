@@ -34,8 +34,8 @@ class AnnResValues(object):
     WN = "WN" #Annotate with WordNet synsets
 
 class MatchValues(object):
-    EXACT_MATCHING = "EXACT MATCHING" #Only exact matches are considered for disambiguation
-    PARTIAL_MATCHING = "PARTIAL MATCHING" #Both exact and partial matches (e.g.
+    EXACT_MATCHING = "EXACT_MATCHING" #Only exact matches are considered for disambiguation
+    PARTIAL_MATCHING = "PARTIAL_MATCHING" #Both exact and partial matches (e.g.
     
 class MCSValues(object):
     OFF = "OFF" #Do not use Most Common Sense
@@ -130,10 +130,11 @@ class Babelfy(object):
         values = [text,lang,key,anntype,annres,th,match,mcs,dens,
                             cands,postag,extaida]
         
-        query = "&".join([param+"="+value for param,value in zip(self.PARAMETERS, values)
-                         if value is not None])
+        query = urllib.urlencode({param:value for param,value in zip(self.PARAMETERS, values)
+                         if value is not None})
 
-        
+        print query
         json_string = urllib.urlopen(self.API+self.DISAMBIGUATE+query).read()
+        #print json_string
         babelfy_jsons = json.loads(json_string)
         return [SemanticAnnotation(babelfy_json) for babelfy_json in babelfy_jsons]
